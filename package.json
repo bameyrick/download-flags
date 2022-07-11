@@ -1,5 +1,5 @@
 {
-  "name": "get-flags",
+  "name": "get-flag-svgs",
   "version": "1.0.0",
   "description": "Download flag svgs from flagcdn.com",
   "keywords": [
@@ -12,18 +12,18 @@
     "cli"
   ],
   "bugs": {
-    "url": "https://github.com/bameyrick/get-flags/issues"
+    "url": "https://github.com/bameyrick/get-flag-svgs/issues"
   },
-  "homepage": "https://github.com/bameyrick/get-flags#readme",
+  "homepage": "https://github.com/bameyrick/get-flag-svgs#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bameyrick/get-flags.git"
+    "url": "git+https://github.com/bameyrick/get-flag-svgs.git"
   },
   "author": "Ben Meyrick <bameyrick@gmail.com>",
   "license": "MIT",
   "type": "module",
   "bin": {
-    "get-flags": "./dist/index.js"
+    "get-flag-svgs": "./dist/index.js"
   },
   "scripts": {
     "start": "ts-node src/index.ts",
