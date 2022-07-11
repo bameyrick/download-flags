@@ -12,22 +12,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # - run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
-      #   id: nvm
+      - run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
+        id: nvm
 
-      # - name: Set up Node.js ${{ steps.nvm.outputs.NODE_VERSION }}
-      #   uses: actions/setup-node@v1
-      #   with:
-      #     node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
+      - name: Set up Node.js ${{ steps.nvm.outputs.NODE_VERSION }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
 
-      # - name: Install dependencies
-      #   run: npm install
+      - name: Install dependencies
+        run: npm install
 
-      # - name: Build
-      #   run: npm run build
+      - name: Build
+        run: npm run build
 
       - name: Publish package on NPM 📦
-        # run: echo ${{github.ref_name}}
-        run: npm version  ${{github.ref_name}} --allow-same-version && npm publish --dry-run
-        # env:
-        #   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm version  ${{github.ref_name}} --allow-same-version && npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,7 +1,7 @@
 {
   "name": "download-flags",
   "version": "1.0.0",
-  "description": "",
+  "description": "Download flag svgs from flagcdn.com",
   "keywords": [
     "Download flags",
     "flagcdn",

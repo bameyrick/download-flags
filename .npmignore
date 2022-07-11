@@ -1,0 +1,6 @@
+*
+!/dist/**/*
+!/LICENSE
+!/package.json
+!/yarn.lock
+!/svgo.config.json
