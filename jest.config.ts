@@ -3,7 +3,13 @@ import { InitialOptionsTsJest } from 'ts-jest';
 const esModules = [].join('|');
 
 export default {
-  preset: 'ts-jest',
+  preset: 'ts-jest/presets/default-esm',
+  globals: {
+    'ts-jest': {
+      useESM: true,
+    },
+  },
   testEnvironment: 'node',
   transformIgnorePatterns: [`node_modules/(?!${esModules})`],
+  testTimeout: 10000,
 } as InitialOptionsTsJest;

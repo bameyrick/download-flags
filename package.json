@@ -1,5 +1,5 @@
 {
-  "name": "flags-download",
+  "name": "download-flags",
   "version": "1.0.0",
   "description": "",
   "keywords": [
@@ -12,30 +12,25 @@
     "cli"
   ],
   "bugs": {
-    "url": "https://github.com/bameyrick/boilerplate/issues"
+    "url": "https://github.com/bameyrick/download-flags/issues"
   },
-  "homepage": "https://github.com/bameyrick/boilerplate#readme",
+  "homepage": "https://github.com/bameyrick/download-flags#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bameyrick/boilerplate.git"
+    "url": "git+https://github.com/bameyrick/download-flags.git"
   },
   "author": "Ben Meyrick <bameyrick@gmail.com>",
   "license": "MIT",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/mjs/index.js",
-  "types": "./dist/mjs/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/mjs/index.js",
-      "require": "./dist/cjs/index.js"
-    }
+  "type": "module",
+  "bin": {
+    "download-flags": "./dist/index.js"
   },
   "scripts": {
     "start": "ts-node src/index.ts",
-    "test": "jest",
-    "build": "tsc -p tsconfig.mjs.json && cpy package.mjs.json dist/mjs --rename package.json && tsc -p tsconfig.cjs.json && cpy package.cjs.json dist/cjs --rename package.json",
+    "test": "node --no-warnings --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "build": "npm run tidy-clean && tsc -p tsconfig.json",
     "lint": "npm run tidy-clean && eslint",
-    "tidy-clean": "rimraf dist coverage",
+    "tidy-clean": "rimraf dist coverage tmp",
     "pre-commit": "lint-staged",
     "prepare-husky": "npx husky-init",
     "upgrade-interactive": "npm-check --update"
@@ -60,6 +55,9 @@
   "devDependencies": {
     "@types/jest": "^28.1.4",
     "@types/node": "^18.0.3",
+    "@types/node-fetch": "^2.6.2",
+    "@types/svgo": "^2.6.3",
+    "@types/yargs": "^17.0.10",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -75,5 +73,12 @@
     "ts-jest": "^28.0.5",
     "ts-node": "^10.8.2",
     "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "iso-3166-1": "^2.1.1",
+    "node-fetch": "^3.2.6",
+    "svgo": "^2.8.0",
+    "yargs": "^17.5.1"
   }
 }
