@@ -32,6 +32,6 @@ jobs:
         run: git config --global user.email "bameyrick@gmail.com" && git config --global user.name "Ben Meyrick"
 
       - name: Publish package on NPM 📦
-        run: echo ${{github.ref_name}} && npm version ${{github.ref_name}} --allow-same-version --allow-empty && npm publish
+        run: npm version ${{github.ref_name}} --allow-same-version --allow-empty && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -3,7 +3,7 @@ import iso from 'iso-3166-1';
 
 describe(`Boilerplate`, () => {
   it(`Should download icons to the specified location at the specified width`, async () => {
-    await runCommand('download-flags --destination=tmp');
+    await runCommand('get-flags --destination=tmp');
 
     expect(fs.existsSync('tmp')).toEqual(true);
 

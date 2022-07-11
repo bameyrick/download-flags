@@ -16,7 +16,7 @@ const options: Record<string, yargs.Options> = {
 };
 
 const parser = await yargs(hideBin(process.argv))
-  .scriptName('download-flags')
+  .scriptName('get-flags')
   .usage('$0 [options] <command ...>')
   .help('h')
   .alias('h', 'help')
