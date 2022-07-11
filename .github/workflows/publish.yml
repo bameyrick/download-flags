@@ -10,13 +10,13 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - run: echo ::set-output name=NODE_VERSION::$(cat .nvmrc)
         id: nvm
 
       - name: Set up Node.js ${{ steps.nvm.outputs.NODE_VERSION }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
 
@@ -27,6 +27,6 @@ jobs:
         run: npm run build
 
       - name: Publish package on NPM 📦
-        run: npm version  ${{github.ref_name}} --allow-same-version && npm publish
+        run: npm version  ${{github.ref_name}} --allow-same-version --allow-empty && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
