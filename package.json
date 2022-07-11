@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "ts-node src/index.ts",
-    "test": "node --no-warnings --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test": "node --no-warnings --experimental-vm-modules node_modules/jest/bin/jest.js  --coverage",
     "build": "npm run tidy-clean && tsc -p tsconfig.json",
     "lint": "npm run tidy-clean && eslint",
     "tidy-clean": "rimraf dist coverage tmp",
