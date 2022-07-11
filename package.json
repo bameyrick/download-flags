@@ -1,8 +1,16 @@
 {
-  "name": "boilerplate",
+  "name": "flags-download",
   "version": "1.0.0",
   "description": "",
-  "keywords": [],
+  "keywords": [
+    "Download flags",
+    "flagcdn",
+    "svg",
+    "iso-3166-1",
+    "iso 3166 1",
+    "flags",
+    "cli"
+  ],
   "bugs": {
     "url": "https://github.com/bameyrick/boilerplate/issues"
   },
