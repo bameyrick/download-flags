@@ -1,7 +1,11 @@
 import * as fs from 'fs';
 import iso from 'iso-3166-1';
 
-describe(`Boilerplate`, () => {
+describe(`get-flag-svgs`, () => {
+  afterEach(() => {
+    fs.rmdirSync('tmp', { recursive: true });
+  });
+
   it(`Should download icons to the specified location at the specified width`, async () => {
     await runCommand('get-flag-svgs --destination=tmp');
 
